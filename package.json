@@ -1,12 +1,10 @@
 {
-  "name": "cssrem",
-  "displayName": "cssrem",
+  "name": "rem2rem",
+  "displayName": "rem2rem",
   "description": "A px to rem plugin",
   "version": "0.1.0",
-  "publisher": "cipchk",
+  "publisher": "mme",
   "icon": "icon.png",
-  "license": "MIT",
-  "licenseUrl": "LICENSE",
   "engines": {
     "vscode": "^1.12.0"
   },
@@ -39,36 +37,35 @@
     "onLanguage:scss",
     "onLanguage:sass",
     "onLanguage:stylus",
-    "onLanguage:tpl"
+    "onLanguage:tpl",
+    "onCommand:extension.rem2rem"
   ],
   "main": "./out/src/extension",
   "contributes": {
-    "commands": [
-      {
-        "command": "extension.cssrem",
-        "title": "CSSRem PxToRem"
-      }
-    ],
+    "commands": [{
+      "command": "extension.rem2rem",
+      "title": "rem2Rem"
+    }],
     "configuration": {
       "type": "object",
-      "title": "cssrem configuration",
+      "title": "rem2rem configuration",
       "properties": {
-        "cssrem.rootFontSize": {
+        "rem2rem.rootFontSize": {
           "type": "number",
           "default": 16,
           "description": "root font-size (unit: px), default: 16"
         },
-        "cssrem.fixedDigits": {
+        "rem2rem.fixedDigits": {
           "type": "number",
           "default": 6,
           "description": "Px to rem decimal point maximum length, default: 6"
         },
-        "cssrem.autoRemovePrefixZero": {
+        "rem2rem.autoRemovePrefixZero": {
           "type": "boolean",
-          "default": true,
-          "description": "Automatically remove prefix 0, default: true"
+          "default": false,
+          "description": "Automatically remove prefix 0, default: false"
         },
-        "cssrem.ingoresViaCommand": {
+        "rem2rem.ingoresViaCommand": {
           "type": "array",
           "items": {
             "type": "string"
